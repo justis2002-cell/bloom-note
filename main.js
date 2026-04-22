@@ -2,6 +2,10 @@
    main.js — BLOOM NOTE
 ============================== */
 
+// 새로고침 시 맨 위로
+history.scrollRestoration = 'manual';
+window.scrollTo(0, 0);
+
 
 /* ==============================
    1. 네비게이션 — 스크롤 시 스타일 변경
