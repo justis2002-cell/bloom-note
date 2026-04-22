@@ -60,15 +60,15 @@ const heroTitle = document.querySelector('.hero-title');
 const heroDesc  = document.querySelector('.hero-desc');
 const heroBtns  = document.querySelector('.hero-btns');
 
-const heroEls     = [heroSub, heroTitle, heroDesc, heroBtns];
-const heroDelays  = [200, 500, 800, 1100];
+const heroEls    = [heroSub, heroTitle, heroDesc, heroBtns];
+const heroDelays = [100, 300, 500, 700]; // 더 빠르게
 
 // 초기 상태 — 전부 숨김
 heroEls.forEach((el) => {
   if (!el) return;
   el.style.opacity    = '0';
-  el.style.transform  = 'translateY(30px)';
-  el.style.transition = 'opacity 0.9s cubic-bezier(0.4,0,0.2,1), transform 0.9s cubic-bezier(0.4,0,0.2,1)';
+  el.style.transform  = 'translateY(16px)'; /* 30px → 16px */
+  el.style.transition = 'opacity 1s cubic-bezier(0.4,0,0.2,1), transform 1s cubic-bezier(0.4,0,0.2,1)';
 });
 
 // 순서대로 등장
