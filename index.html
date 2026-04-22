@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLOOM NOTE | 블룸노트 플라워샵</title>
+
+  <!-- Pretendard (한국어) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+  <!-- Cormorant Garamond (영문) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<!-- ==============================
+     NAVIGATION
+============================== -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">BLOOM NOTE</a>
+
+  <ul class="nav-links">
+    <li><a href="#story">Story</a></li>
+    <li><a href="#products">Shop</a></li>
+    <li><a href="#curation">Curation</a></li>
+    <li><a href="#class">Class</a></li>
+    <li><a href="#instagram">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <button class="hamburger" id="hamburgerBtn" aria-label="메뉴 열기">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<!-- 모바일 전용 메뉴 -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">✕</button>
+  <a href="#story"     onclick="closeMobile()">Story</a>
+  <a href="#products"  onclick="closeMobile()">Shop</a>
+  <a href="#curation"  onclick="closeMobile()">Curation</a>
+  <a href="#class"     onclick="closeMobile()">Class</a>
+  <a href="#instagram" onclick="closeMobile()">Gallery</a>
+  <a href="#contact"   onclick="closeMobile()">Contact</a>
+</div>
+
+
+<!-- ==============================
+     01. HERO SECTION
+============================== -->
+<section id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+
+  <div class="hero-content">
+    <p class="hero-sub">Floral Atelier since 2020</p>
+    <h1 class="hero-title">BLOOM<br>NOTE</h1>
+    <p class="hero-desc">
+      BLOOM NOTE는 계절의 결을 담은 꽃과 섬세한 스타일링으로<br>
+      일상과 기념일의 장면을 더욱 아름답게 완성합니다.
+    </p>
+    <div class="hero-btns">
+      <a href="#products" class="btn-primary">꽃 보러가기</a>
+      <a href="#class"    class="btn-outline">클래스 보기</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span>SCROLL</span>
+  </div>
+</section>
+
+
+<!-- ==============================
+     02. BRAND STORY SECTION
+============================== -->
+<section id="story">
+  <div class="story-inner">
+
+    <!-- 텍스트 영역 -->
+    <div class="story-text reveal">
+      <p class="section-label">Our Story</p>
+      <h2 class="section-title">The Art<br>of the Bloom</h2>
+      <div class="divider"></div>
+      <p class="section-desc">
+        BLOOM NOTE는 일상의 순간과 특별한 날을 꽃으로 기록하는
+        감성 플라워 브랜드입니다.<br><br>
+        계절마다 달라지는 꽃의 언어로 당신의 이야기를 씁니다.
+        한 송이의 꽃이 기억 속에 남는 하나의 페이지가 되도록.
+      </p>
+      <a href="#contact" class="btn-primary" style="margin-top: 32px; display: inline-block;">
+        문의하기
+      </a>
+    </div>
+
+    <!-- 이미지 영역 -->
+    <div class="story-images reveal reveal-delay-2">
+      <div class="story-img-main">
+        <img
+          src="image/story-main.jpg"
+          alt="플라워 스타일링"
+          loading="lazy"
+        />
+      </div>
+      <div class="story-img-sub">
+        <img
+          src="image/story-sub-01.jpg"
+          alt="꽃다발"
+          loading="lazy"
+        />
+      </div>
+      <div class="story-img-sub">
+        <img
+          src="image/story-sub-02.jpg"
+          alt="꽃바구니"
+          loading="lazy"
+        />
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ==============================
+     FEATURES STRIP (섹션 사이 띠 배너)
+============================== -->
+<div class="features-strip">
+  <div class="features-strip-inner">
+    <div class="feature-item reveal">
+      <span class="feature-icon">🌿</span>
+      <p>매일 신선한 꽃 입고</p>
+    </div>
+    <div class="feature-item reveal reveal-delay-1">
+      <span class="feature-icon">🎁</span>
+      <p>당일 포장 & 픽업 가능</p>
+    </div>
+    <div class="feature-item reveal reveal-delay-2">
+      <span class="feature-icon">🚗</span>
+      <p>서울 전지역 배송</p>
+    </div>
+    <div class="feature-item reveal reveal-delay-3">
+      <span class="feature-icon">✉️</span>
+      <p>카카오톡 빠른 문의</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ==============================
+     03. PRODUCTS SECTION
+============================== -->
+<section id="products">
+
+  <div class="products-header reveal">
+    <div class="products-header-text">
+      <p class="section-label">Our Flowers</p>
+      <h2 class="section-title">꽃 상품 소개</h2>
+    </div>
+    <div class="tab-btns">
+      <button class="tab-btn active" data-filter="all">전체</button>
+      <button class="tab-btn"        data-filter="bouquet">꽃다발</button>
+      <button class="tab-btn"        data-filter="basket">꽃바구니</button>
+    </div>
+  </div>
+
+  <div class="products-grid" id="productsGrid">
+
+    <div class="product-card reveal" data-cat="bouquet">
+      <div class="product-img">
+        <img src="image/product-01.jpg" alt="시그니처 부케" loading="lazy" />
+        <span class="product-badge">BEST</span>
+      </div>
+      <div class="product-info">
+        <p class="product-category">Bouquet</p>
+        <h3 class="product-name">시그니처 부케</h3>
+        <p class="product-desc">블룸노트만의 감성으로 구성한 시그니처 꽃다발. 계절 꽃으로 매월 새롭게 선보입니다.</p>
+      </div>
+    </div>
+
+    <div class="product-card reveal reveal-delay-1" data-cat="bouquet">
+      <div class="product-img">
+        <img src="image/product-02.jpg" alt="미니 부케" loading="lazy" />
+        <span class="product-badge">NEW</span>
+      </div>
+      <div class="product-info">
+        <p class="product-category">Bouquet</p>
+        <h3 class="product-name">미니 부케</h3>
+        <p class="product-desc">일상 속 작은 선물로 딱 좋은 사이즈. 가볍게 전하는 마음 한 송이.</p>
+      </div>
+    </div>
+
+    <div class="product-card reveal reveal-delay-2" data-cat="bouquet">
+      <div class="product-img">
+        <img src="image/product-03.jpg" alt="꽃다발" loading="lazy" />
+      </div>
+      <div class="product-info">
+        <p class="product-category">Bouquet</p>
+        <h3 class="product-name">꽃다발</h3>
+        <p class="product-desc">계절마다 달라지는 한정 구성의 꽃다발. 지금 이 계절의 꽃을 담았습니다.</p>
+      </div>
+    </div>
+
+    <div class="product-card reveal" data-cat="basket">
+      <div class="product-img">
+        <img src="image/product-04.jpg" alt="미니 바스켓" loading="lazy" />
+      </div>
+      <div class="product-info">
+        <p class="product-category">Basket</p>
+        <h3 class="product-name">미니 플라워 바스켓</h3>
+        <p class="product-desc">테이블 위에 두기 좋은 아담한 꽃바구니. 인테리어 소품으로도 완벽합니다.</p>
+      </div>
+    </div>
+
+    <div class="product-card reveal reveal-delay-1" data-cat="bouquet">
+      <div class="product-img">
+        <img src="image/product-05.jpg" alt="프리미엄 부케" loading="lazy" />
+        <span class="product-badge">PREMIUM</span>
+      </div>
+      <div class="product-info">
+        <p class="product-category">Bouquet</p>
+        <h3 class="product-name">프리미엄 웨딩 부케</h3>
+        <p class="product-desc">특별한 날을 위한 프리미엄 부케. 신부의 드레스와 어울리는 맞춤 제작.</p>
+      </div>
+    </div>
+
+    <div class="product-card reveal reveal-delay-2" data-cat="basket">
+      <div class="product-img">
+        <img src="image/product-06.jpg" alt="시즌 바스켓" loading="lazy" />
+        <span class="product-badge">SEASON</span>
+      </div>
+      <div class="product-info">
+        <p class="product-category">Basket</p>
+        <h3 class="product-name">시즌 스페셜 바스켓</h3>
+        <p class="product-desc">계절의 이야기를 담은 한정 구성. 매 시즌 새로운 꽃으로 새단장합니다.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ==============================
+     04. CURATION SECTION
+============================== -->
+<section id="curation">
+  <div class="curation-inner">
+
+    <div class="curation-header reveal">
+      <p class="section-label">Flower Curation</p>
+      <h2 class="section-title">이런 날에 추천해요</h2>
+      <p class="section-desc">
+        어떤 꽃을 골라야 할지 고민될 때.<br>
+        블룸노트가 당신의 마음을 대신 전합니다.
+      </p>
+    </div>
+
+    <div class="curation-grid">
+
+      <div class="curation-card reveal">
+        <img src="image/curation-01.jpg" alt="기념일" loading="lazy" />
+        <div class="curation-overlay">
+          <p class="curation-tag">Anniversary</p>
+          <h3 class="curation-title">기념일</h3>
+          <p class="curation-sub">함께한 시간을 꽃으로 기억하세요</p>
+        </div>
+      </div>
+
+      <div class="curation-card reveal reveal-delay-1">
+        <img src="image/curation-02.jpg" alt="프로포즈" loading="lazy" />
+        <div class="curation-overlay">
+          <p class="curation-tag">Propose</p>
+          <h3 class="curation-title">프로포즈</h3>
+          <p class="curation-sub">세상에서 가장 설레는 순간을 위해</p>
+        </div>
+      </div>
+
+      <div class="curation-card reveal reveal-delay-2">
+        <img src="image/curation-03.jpg" alt="생일" loading="lazy" />
+        <div class="curation-overlay">
+          <p class="curation-tag">Birthday</p>
+          <h3 class="curation-title">생일 선물</h3>
+          <p class="curation-sub">소중한 사람의 특별한 하루</p>
+        </div>
+      </div>
+
+      <div class="curation-card reveal reveal-delay-3">
+        <img src="image/curation-04.jpg" alt="축하" loading="lazy" />
+        <div class="curation-overlay">
+          <p class="curation-tag">Celebration</p>
+          <h3 class="curation-title">개업 & 축하</h3>
+          <p class="curation-sub">새로운 시작에 꽃으로 응원을</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ==============================
+     QUOTE BAND
+============================== -->
+<div class="quote-band reveal">
+  <blockquote>
+    "Nature is the greatest artist,<br>
+    and we are proud to translate nature's art."
+  </blockquote>
+  <cite>— BLOOM NOTE</cite>
+</div>
+
+
+<!-- ==============================
+     05. CLASS SECTION
+============================== -->
+<section id="class">
+  <div class="class-inner">
+
+    <!-- 텍스트 영역 -->
+    <div class="class-text reveal">
+      <p class="section-label">Flower Class</p>
+      <h2 class="section-title">Seasonal<br>Flower Class</h2>
+      <div class="divider"></div>
+      <p class="section-desc">
+        꽃을 처음 접하는 분도 쉽게 따라올 수 있는 소규모 클래스.
+        계절의 꽃으로 나만의 작품을 만들어 보세요.
+        전문 플로리스트가 처음부터 끝까지 함께합니다.
+      </p>
+
+      <ul class="class-list">
+        <li class="class-item">
+          <span class="class-date">MAY 10</span>
+          <div class="class-info">
+            <h4>봄 꽃다발 클래스</h4>
+            <p>라넌큘러스 & 작약으로 만드는 봄 부케 · 4인 소그룹</p>
+          </div>
+        </li>
+        <li class="class-item">
+          <span class="class-date">MAY 24</span>
+          <div class="class-info">
+            <h4>리스 & 코르사주 클래스</h4>
+            <p>벽걸이 리스 제작 · 선물용 포장까지 · 6인 소그룹</p>
+          </div>
+        </li>
+        <li class="class-item">
+          <span class="class-date">JUN 07</span>
+          <div class="class-info">
+            <h4>여름 테이블 플라워 클래스</h4>
+            <p>홈 파티용 센터피스 제작 · 음료 제공 · 4인 소그룹</p>
+          </div>
+        </li>
+      </ul>
+
+      <a href="#contact" class="btn-white">클래스 신청하기</a>
+    </div>
+
+    <!-- 이미지 영역 -->
+    <div class="class-image reveal reveal-delay-2">
+      <img
+        src="image/class-main.jpg"
+        alt="플라워 클래스"
+        loading="lazy"
+      />
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ==============================
+     06. INSTAGRAM SECTION
+============================== -->
+<section id="instagram">
+
+  <div class="insta-header reveal">
+    <p class="section-label">Gallery</p>
+    <h2 class="section-title">Follow Along</h2>
+    <a class="insta-handle" href="#" target="_blank">
+      📷 @bloom.note_official
+    </a>
+  </div>
+
+  <div class="insta-grid">
+    <div class="insta-item reveal">
+      <img src="image/insta-01.jpg" alt="feed1" loading="lazy" />
+      <div class="insta-hover">♡</div>
+    </div>
+    <div class="insta-item reveal reveal-delay-1">
+      <img src="image/insta-02.jpg" alt="feed2" loading="lazy" />
+      <div class="insta-hover">♡</div>
+    </div>
+    <div class="insta-item reveal reveal-delay-2">
+      <img src="image/insta-03.jpg" alt="feed3" loading="lazy" />
+      <div class="insta-hover">♡</div>
+    </div>
+    <div class="insta-item reveal reveal-delay-3">
+      <img src="image/insta-04.jpg" alt="feed4" loading="lazy" />
+      <div class="insta-hover">♡</div>
+    </div>
+    <div class="insta-item reveal">
+      <img src="image/insta-05.jpg" alt="feed5" loading="lazy" />
+      <div class="insta-hover">♡</div>
+    </div>
+    <div class="insta-item reveal reveal-delay-1">
+      <img src="image/insta-06.jpg" alt="feed6" loading="lazy" />
+      <div class="insta-hover">♡</div>
+    </div>
+    <div class="insta-item reveal reveal-delay-2">
+      <img src="image/insta-07.jpg" alt="feed7" loading="lazy" />
+      <div class="insta-hover">♡</div>
+    </div>
+    <div class="insta-item reveal reveal-delay-3">
+      <img src="image/insta-08.jpg" alt="feed8" loading="lazy" />
+      <div class="insta-hover">♡</div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ==============================
+     07. CONTACT & LOCATION
+============================== -->
+<section id="contact">
+  <div class="contact-inner">
+
+    <!-- 문의 영역 -->
+    <div class="contact-text">
+      <div class="reveal">
+        <p class="section-label">Contact</p>
+        <h2 class="section-title">예약 & 문의</h2>
+        <div class="divider"></div>
+        <p class="section-desc">
+          꽃 주문, 클래스 신청, 맞춤 제작까지.<br>
+          편하게 연락 주시면 빠르게 답변드립니다.
+        </p>
+      </div>
+
+      <div class="contact-btns reveal reveal-delay-1">
+        <a href="https://open.kakao.com/o/bloumnote" class="contact-btn kakao-btn" target="_blank">
+          <div class="contact-btn-icon kakao-icon">💬</div>
+          <div class="contact-btn-text">
+            <h4>카카오톡으로 문의하기</h4>
+            <p>오픈채팅 운영 10:00 – 19:00</p>
+          </div>
+        </a>
+        <a href="tel:02-0000-0000" class="contact-btn phone-btn">
+          <div class="contact-btn-icon phone-icon">📞</div>
+          <div class="contact-btn-text">
+            <h4>전화 문의</h4>
+            <p>02-0000-0000 · 평일 10:00 – 18:00</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="store-hours reveal reveal-delay-2">
+        <h4>Store Hours</h4>
+        <div class="hours-row">
+          <span>월 – 금</span><span>10:00 – 19:00</span>
+        </div>
+        <div class="hours-row">
+          <span>토요일</span><span>10:00 – 17:00</span>
+        </div>
+        <div class="hours-row">
+          <span>일 · 공휴일</span><span>예약 주문만 가능</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 지도 영역 -->
+    <div class="map-wrap">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1329.8691913751297!2d126.93515629170032!3d37.555539491705716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c98e8a188c921%3A0x2867c048a51f364b!2z7ISc7Jq47Yq567OE7IucIOuniO2PrOq1rCDsl7Drgqjrj5k!5e0!3m2!1sko!2skr!4v1776867394357!5m2!1sko!2skr" 
+        width="100%" 
+        height="320" 
+        style="border:0; display:block;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+      <div class="map-info">
+        <h4>🌿 BLOOM NOTE 플라워샵</h4>
+        <p>
+          서울특별시 마포구 연남동 000-00 1층<br>
+          홍대입구역 3번 출구 도보 5분 · 주차 불가 (인근 공영주차장 이용)
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ==============================
+     FOOTER
+============================== -->
+<footer>
+  <div class="footer-inner">
+
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h2 class="footer-logo">BLOOM NOTE</h2>
+        <p>일상의 순간과 특별한 날을<br>꽃으로 기록하는 감성 플라워 브랜드.</p>
+      </div>
+      <nav class="footer-nav">
+        <h4>SHOP</h4>
+        <ul>
+          <li><a href="#products">꽃다발</a></li>
+          <li><a href="#products">꽃바구니</a></li>
+          <li><a href="#curation">큐레이션</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-nav">
+        <h4>CLASS</h4>
+        <ul>
+          <li><a href="#class">클래스 소개</a></li>
+          <li><a href="#class">클래스 신청</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-nav">
+        <h4>INFO</h4>
+        <ul>
+          <li><a href="#story">Brand Story</a></li>
+          <li><a href="#instagram">Instagram</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 BLOOM NOTE. All rights reserved.</p>
+      <p>개인정보처리방침 · 이용약관</p>
+    </div>
+
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
