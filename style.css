@@ -406,12 +406,30 @@ section {
 
 .hero-scroll { display: none; }
 
-/* 히어로 텍스트 — 초기 깜빡임 방지 */
-.hero-sub,
-.hero-title,
-.hero-desc,
-.hero-btns {
-  will-change: opacity, transform;
+/* 히어로 텍스트 한 줄씩 등장 */
+.hero-line {
+  display: block;
+  opacity: 0;
+  transform: translateY(22px);
+  filter: blur(4px);
+  transition:
+    opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.9s cubic-bezier(0.4, 0, 0.2, 1),
+    filter 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-line.show {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+.hero-title .hero-line {
+  line-height: 1.05;
+}
+
+.hero-desc .hero-line {
+  display: block;
 }
 
 
@@ -469,38 +487,67 @@ section {
    7. FEATURES STRIP
 ============================== */
 .features-strip {
-  background: var(--sage);
-  padding: 44px 60px;
+  background: linear-gradient(135deg, #AEBCA8 0%, #BFCCB8 100%);
+  padding: 58px 60px;
 }
 
 .features-strip-inner {
   max-width: 1100px;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
 }
 
 .feature-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  color: var(--white);
+  position: relative;
+  padding: 34px 22px 32px;
+  border-radius: 24px;
   text-align: center;
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: transform 0.35s ease, background 0.35s ease, box-shadow 0.35s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 18px 44px rgba(44, 44, 44, 0.12);
 }
 
 .feature-icon {
-  font-size: 1.6rem;
-  line-height: 1;
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--sage-dark);
+  font-family: var(--font-en);
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  box-shadow: 0 10px 24px rgba(44, 44, 44, 0.08);
 }
 
-.feature-item p {
-  font-size: 0.8rem;
-  letter-spacing: 0.06em;
-  opacity: 0.92;
+.feature-title {
+  font-family: var(--font-en);
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.feature-desc {
+  font-size: 0.88rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.82);
 }
 
 
@@ -695,29 +742,58 @@ section {
 
 
 /* ==============================
-   10. QUOTE BAND
+   10. QUOTE BAND — FIXED BACKGROUND
 ============================== */
 .quote-band {
-  background: var(--cream);
-  padding: 88px 60px;
+  position: relative;
+  min-height: 480px;
+  padding: 120px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+
+  background-image: url('image/quote-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  overflow: hidden;
+}
+
+/* 이미지가 너무 강하지 않게 아주 약한 크림 오버레이 */
+.quote-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(245, 240, 232, 0.42);
+  backdrop-filter: blur(0.8px);
+  -webkit-backdrop-filter: blur(0.8px);
+  z-index: 1;
+}
+
+.quote-content {
+  position: relative;
+  z-index: 2;
 }
 
 .quote-band blockquote {
   font-family: var(--font-en);
-  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
   font-weight: 300;
   font-style: italic;
   color: var(--dark);
-  line-height: 1.65;
-  max-width: 700px;
-  margin: 0 auto 18px;
+  line-height: 1.75;
+  max-width: 900px;
+  margin: 0 auto 28px;
+  word-break: keep-all;
+  text-shadow: 0 2px 16px rgba(245, 240, 232, 0.75);
 }
 
 .quote-band cite {
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   color: var(--sage-dark);
-  letter-spacing: 0.16em;
+  letter-spacing: 0.2em;
+  text-shadow: 0 2px 12px rgba(245, 240, 232, 0.8);
 }
 
 
@@ -1134,7 +1210,46 @@ footer {
   /* 섹션 */
   section               { padding: 72px 24px; }
   .features-strip       { padding: 32px 24px; }
-  .quote-band           { padding: 64px 24px; }
+
+  .features-strip-inner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .feature-item {
+    padding: 28px 16px 26px;
+  }
+
+  .feature-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 0.92rem;
+  }
+
+  .feature-title {
+    font-size: 1.05rem;
+  }
+
+  .feature-desc {
+    font-size: 0.78rem;
+  }
+
+  .quote-band {
+    min-height: 360px;
+    padding: 86px 24px;
+    background-attachment: scroll;
+  }
+
+  .quote-overlay {
+    background: rgba(245, 240, 232, 0.52);
+    backdrop-filter: blur(0.5px);
+    -webkit-backdrop-filter: blur(0.5px);
+  }
+
+  .quote-band blockquote {
+    font-size: 1.55rem;
+    line-height: 1.7;
+  }
   #class                { padding: 72px 24px; }
   footer                { padding: 48px 24px 28px; }
 

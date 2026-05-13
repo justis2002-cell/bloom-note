@@ -53,32 +53,15 @@ mobileMenu.addEventListener('click', (e) => {
 
 /* ==============================
    3. 히어로 텍스트 인터랙션
-   D안 — 슬라이드 업 + 순차 등장
+   한 줄씩 순차 등장
 ============================== */
-const heroSub   = document.querySelector('.hero-sub');
-const heroTitle = document.querySelector('.hero-title');
-const heroDesc  = document.querySelector('.hero-desc');
-const heroBtns  = document.querySelector('.hero-btns');
+const heroLines = document.querySelectorAll('.hero-line');
 
-const heroEls    = [heroSub, heroTitle, heroDesc, heroBtns];
-const heroDelays = [100, 300, 500, 700]; // 더 빠르게
-
-// 초기 상태 — 전부 숨김
-heroEls.forEach((el) => {
-  if (!el) return;
-  el.style.opacity    = '0';
-  el.style.transform  = 'translateY(16px)'; /* 30px → 16px */
-  el.style.transition = 'opacity 1s cubic-bezier(0.4,0,0.2,1), transform 1s cubic-bezier(0.4,0,0.2,1)';
-});
-
-// 순서대로 등장
 window.addEventListener('load', () => {
-  heroEls.forEach((el, i) => {
-    if (!el) return;
+  heroLines.forEach((line, index) => {
     setTimeout(() => {
-      el.style.opacity   = '1';
-      el.style.transform = 'translateY(0)';
-    }, heroDelays[i]);
+      line.classList.add('show');
+    }, 180 + index * 180);
   });
 });
 
