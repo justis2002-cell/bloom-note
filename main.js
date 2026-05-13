@@ -210,28 +210,32 @@ document.head.appendChild(navActiveStyle);
 
 /* ==============================
    9. 상품 카드 틸트 효과
+   PC에서만 작동
 ============================== */
 const tiltCards = document.querySelectorAll('.product-card');
+const isTouchDevice = window.matchMedia('(hover: none)').matches;
 
-tiltCards.forEach((card) => {
-  card.addEventListener('mousemove', (e) => {
-    const rect    = card.getBoundingClientRect();
-    const x       = e.clientX - rect.left;
-    const y       = e.clientY - rect.top;
-    const centerX = rect.width  / 2;
-    const centerY = rect.height / 2;
-    const rotateX = ((y - centerY) / centerY) * -4;
-    const rotateY = ((x - centerX) / centerX) *  4;
+if (!isTouchDevice) {
+  tiltCards.forEach((card) => {
+    card.addEventListener('mousemove', (e) => {
+      const rect    = card.getBoundingClientRect();
+      const x       = e.clientX - rect.left;
+      const y       = e.clientY - rect.top;
+      const centerX = rect.width  / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -4;
+      const rotateY = ((x - centerX) / centerX) *  4;
 
-    card.style.transform  = `translateY(-8px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    card.style.transition = 'transform 0.1s ease';
+      card.style.transform  = `translateY(-8px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      card.style.transition = 'transform 0.1s ease';
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform  = 'translateY(0)';
+      card.style.transition = 'transform 0.4s ease';
+    });
   });
-
-  card.addEventListener('mouseleave', () => {
-    card.style.transform  = 'translateY(0)';
-    card.style.transition = 'transform 0.4s ease';
-  });
-});
+}
 
 
 /* ==============================
