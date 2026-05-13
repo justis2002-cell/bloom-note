@@ -755,19 +755,20 @@ section {
 
   background-image: url('image/quote-bg.jpg');
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-position: center center;
+  background-attachment: fixed !important;
 
   overflow: hidden;
+  transform: none !important;
 }
 
-/* 이미지가 너무 강하지 않게 아주 약한 크림 오버레이 */
+/* 이미지가 너무 강하지 않게 살짝만 덮는 크림 오버레이 */
 .quote-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(245, 240, 232, 0.42);
-  backdrop-filter: blur(0.8px);
-  -webkit-backdrop-filter: blur(0.8px);
+  background: rgba(245, 240, 232, 0.38);
+  backdrop-filter: blur(0.3px);
+  -webkit-backdrop-filter: blur(0.3px);
   z-index: 1;
 }
 
@@ -778,22 +779,25 @@ section {
 
 .quote-band blockquote {
   font-family: var(--font-en);
-  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-size: clamp(1.45rem, 3vw, 2.35rem);
   font-weight: 300;
   font-style: italic;
   color: var(--dark);
-  line-height: 1.75;
-  max-width: 900px;
-  margin: 0 auto 28px;
+  line-height: 1.8;
+  max-width: 820px;
+  margin: 0 auto 30px;
   word-break: keep-all;
-  text-shadow: 0 2px 16px rgba(245, 240, 232, 0.75);
+  text-shadow: 0 2px 18px rgba(245, 240, 232, 0.85);
 }
 
 .quote-band cite {
-  font-size: 0.82rem;
+  display: inline-block;
+  font-family: var(--font-en);
+  font-size: 1.05rem;
+  font-weight: 400;
   color: var(--sage-dark);
-  letter-spacing: 0.2em;
-  text-shadow: 0 2px 12px rgba(245, 240, 232, 0.8);
+  letter-spacing: 0.18em;
+  text-shadow: 0 2px 12px rgba(245, 240, 232, 0.9);
 }
 
 
@@ -1234,21 +1238,26 @@ footer {
     font-size: 0.78rem;
   }
 
+  /* QUOTE BAND 모바일 */
   .quote-band {
     min-height: 360px;
     padding: 86px 24px;
-    background-attachment: scroll;
+    background-attachment: fixed !important;
   }
 
   .quote-overlay {
-    background: rgba(245, 240, 232, 0.52);
-    backdrop-filter: blur(0.5px);
-    -webkit-backdrop-filter: blur(0.5px);
+    background: rgba(245, 240, 232, 0.46);
+    backdrop-filter: blur(0.2px);
+    -webkit-backdrop-filter: blur(0.2px);
   }
 
   .quote-band blockquote {
-    font-size: 1.55rem;
-    line-height: 1.7;
+    font-size: 1.32rem;
+    line-height: 1.75;
+  }
+
+  .quote-band cite {
+    font-size: 0.95rem;
   }
   #class                { padding: 72px 24px; }
   footer                { padding: 48px 24px 28px; }
