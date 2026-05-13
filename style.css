@@ -282,7 +282,7 @@ section {
   position: fixed;
   top: 0;
   right: 0;
-  width: min(78vw, 360px);
+  width: min(68vw, 320px);
   height: 100vh;
   background: rgba(245, 240, 232, 0.97);
   z-index: 1001;
